@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import {Routes} from "react-router-dom";
+import {Route} from "react-router-dom";
+import {QuadCortex} from "./pages/QuadCortex";
+import {Plugins} from "./pages/Plugins";
+import {Careers} from "./pages/Careers";
+import {CortexCloud} from "./pages/CortexCloud";
+import {Home} from "./pages/Home";
+import {Navbar} from "./components/Navbar";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quad-cortex" element={<QuadCortex />} />
+        <Route path="/plugins" element={<Plugins />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/cortex-cloud" element={<CortexCloud />} />
+      </Routes>
+    </>
   );
 }
 
